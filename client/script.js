@@ -146,4 +146,41 @@ function scrollToAbout() {
     });
 }
 
+// Показать модальное окно
+function showBookingModal() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert('Для записи необходимо авторизоваться');
+        showAuthModal();
+        return;
+    }
+    document.getElementById('bookingModal').style.display = 'block';
+}
+
+// Закрыть модальное окно
+document.querySelector('.modal .close').addEventListener('click', () => {
+    document.getElementById('bookingModal').style.display = 'none';
+});
+
+// Обработчик клика на услуги
+document.querySelectorAll('.service-item').forEach(item => {
+    item.addEventListener('click', () => {
+        showBookingModal();
+    });
+});
+// Прокрутка к контактам
+function scrollToContacts() {
+    document.querySelector('footer').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    const modal = document.getElementById('bookingModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 
