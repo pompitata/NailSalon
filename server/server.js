@@ -5,11 +5,12 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const session = require('express-session');
+const {join} = require("node:path");
 
 const app = express();
 
 
-const clientPath = path.join(__dirname, '../client');
+const clientPath = join(__dirname, '../client');
 
 app.use(session({
     secret: process.env.SECRET_KEY,
