@@ -392,7 +392,7 @@ footer {
 }
 
 /* Для очень маленьких экранов */
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     .about-section {
         padding: 1rem 0.5rem;
     }
@@ -400,4 +400,20 @@ footer {
     .about-highlight h3 {
         font-size: 1.2rem;
     }
+}*/
+
+/* Плавное появление */
+.about-content {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ховер-эффекты */
+.feature-item:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
