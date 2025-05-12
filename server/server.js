@@ -8,7 +8,8 @@ const session = require('express-session');
 
 const app = express();
 
-const path = require('path');
+
+const clientPath = path.join(__dirname, '../client');
 
 app.use(session({
     secret: process.env.SECRET_KEY,
@@ -47,7 +48,7 @@ const pool = new Pool({
 // Настройка middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(clientPath));
 app.use(session({
     secret: SECRET_KEY,
     resave: false,
@@ -147,9 +148,8 @@ app.get('/api/services', async (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+    res.sendFile(path.join(clientPath, 'index.html'));
 });
-
 // Запуск сервера
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
