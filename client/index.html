@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>NailStudio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Шапка -->
+<header>
+    <div class="header-top">
+        <div class="logo-container">
+            <h1>NailStudio</h1>
+            <p class="tagline">С заботой о ваших ручках</p>
+        </div>
+        <nav class="header-nav">
+            <button id="galleryBtn">Наши работы</button>
+            <button onclick="window.location.href='services.html'">Услуги</button>
+            <button onclick="scrollToAbout()">О студии</button>
+        </nav>
+        <div class="auth-container">
+            <div id="userStatus"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Галерея работ с круговым скроллингом -->
+<section id="gallery">
+    <div class="gallery-wrapper">
+        <img src="images/work-5.jpg" alt="Работа 1">
+        <img src="images/photo6.jpg" alt="Работа 2">
+        <img src="images/photo7.jpg" alt="Работа 3">
+        <img src="images/photo8.jpg" alt="Работа 4">
+        <img src="images/photo9.jpg" alt="Работа 5">
+        <img src="images/photo10.jpg" alt="Работа 6">
+        <img src="images/photo11.jpg" alt="Работа 7">
+        <img src="images/photo12.jpg" alt="Работа 8">
+
+        <img src="images/work-5.jpg" alt="Работа 1">
+        <img src="images/photo6.jpg" alt="Работа 2">
+        <img src="images/photo7.jpg" alt="Работа 3">
+        <img src="images/photo8.jpg" alt="Работа 4">
+        <img src="images/photo9.jpg" alt="Работа 5">
+        <img src="images/photo10.jpg" alt="Работа 6">
+        <img src="images/photo11.jpg" alt="Работа 7">
+        <img src="images/photo12.jpg" alt="Работа 8">
+    </div>
+</section>
+
+<!-- Текст под галереей -->
+<p class="gallery-caption">Исполним любое ваше желание, воплотим ваши идеи и сделаем самые красивые ручки в мире!</p>
+
+<!-- Секция "О студии" -->
+<section id="about" class="about-section">
+    <div class="about-content">
+        <h2>NailStudio - салон безупречного маникюра и педикюра</h2>
+
+        <div class="about-highlight">
+            <p>Не привыкла экономить на качестве?</p>
+            <p>Не хочешь переплачивать?</p>
+            <h3>Тебе к нам!</h3>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Идеальный маникюр и педикюр</p>
+                <p>Мы создали пространство, где ты можешь сосредоточиться на себе, забыв о времени. Включим любимый фильм, угостим ароматным кофе, а по выходным - шампанским.</p>
+                <p>Параллельные процедуры в 4 руки экономят твоё время. Каждый визит в NailStudio - это проявление заботы о себе!</p>
+            </div>
+            <div class="about-features">
+                <div class="feature-item">
+                    <h4>🛡️ Гарантия качества</h4>
+                    <p>Все услуги сопровождаются гарантией</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚡ Стерилизация</h4>
+                    <p>3-этапная обработка инструментов в собственной лаборатории</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно для авторизации -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAuthModal()">&times;</span>
+        <h2>Вход</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Имя пользователя" required><br>
+            <input type="password" id="loginPassword" placeholder="Пароль" required><br>
+            <button type="submit">Войти</button>
+        </form>
+        <p>Нет аккаунта? <a href="#" onclick="showRegisterModal()">Зарегистрироваться</a></p>
+    </div>
+</div>
+
+<!-- Модальное окно для регистрации -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Регистрация</h2>
+        <form id="registerForm">
+            <input type="text" id="registerUsername" placeholder="Имя пользователя" required><br>
+            <input type="email" id="registerEmail" placeholder="Email" required><br>
+            <input type="password" id="registerPassword" placeholder="Пароль" required><br>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p>Есть аккаунт? <a href="#" onclick="showAuthModal()">Войти</a></p>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer>
+    <!-- Подвал пока пустой -->
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

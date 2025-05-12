@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наши работы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <div class="logo-container">
+            <h1>NailStudio</h1>
+            <p class="tagline">С заботой о ваших ручках</p>
+        </div>
+        <nav class="header-nav">
+            <button onclick="window.location.href='index.html'">Главная</button>
+        </nav>
+    </div>
+</header>
+
+<div class="gallery-container">
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <div class="pagination-controls">
+        <button id="prevBtn" class="pagination-arrow">←</button>
+        <div class="page-input-container">
+            Страница
+            <input type="number" id="pageInput" min="1" max="50" value="1">
+            из 50
+        </div>
+        <button id="nextBtn" class="pagination-arrow">→</button>
+    </div>
+</div>
+
+<div id="fullscreenModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullscreenImage">
+</div>
+
+<script src="script.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>
