@@ -47,7 +47,7 @@ const pool = new Pool({
 // Настройка middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client')));
 app.use(session({
     secret: SECRET_KEY,
     resave: false,
@@ -147,7 +147,7 @@ app.get('/api/services', async (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 // Запуск сервера
