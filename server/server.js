@@ -27,18 +27,24 @@ const {
 } = process.env;
 
 // Подключение к PostgreSQL
-const pool = new Pool({
+/*const pool = new Pool({
     user: DB_USER,
     host: DB_HOST,
     database: DB_NAME,
     password: DB_PASSWORD,
     port: DB_PORT,
+});*/
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // используйте переменную окружения
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 // Настройка middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'Client')));
 app.use(session({
     secret: SECRET_KEY,
     resave: false,
@@ -134,14 +140,6 @@ app.get('/api/services', async (req, res) => {
         console.error(error);
         res.status(500).json({ message: 'Ошибка на сервере' });
     }
-});
-
-app.get('/gallery', (req, res) => {
-    res.sendFile(path.join(__dirname, 'gallery.html'));
-});
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Client', 'index.html'));
 });
 
 // Запуск сервера

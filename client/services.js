@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /// Загружаем услуги с сервера
 async function loadServices() {
     try {
-        const response = await fetch('/api/services');
+        const response = await fetch('http://localhost:3000/api/services');
         const services = await response.json();
 
         // Отладочная информация, чтобы проверить, что получаем от сервера
@@ -56,7 +56,7 @@ async function checkAuthStatus() {
 
     try {
         // Проверяем авторизацию, посылаем токен на сервер
-        const response = await fetch('/api/protected', {
+        const response = await fetch('http://localhost:3000/api/protected', {
             headers: {
                 'Authorization': token  // Отправляем токен в заголовках
             }
