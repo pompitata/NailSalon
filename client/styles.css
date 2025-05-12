@@ -335,11 +335,10 @@ footer {
 }
 
 /* About Section */
-/* О студии - Основной блок */
 .about-section {
-    padding: 2rem 1rem;
-    background: #fff9fb;
-    line-height: 1.6;
+    padding: 80px 20px;
+    background: #fff5f7;
+    margin: 40px 0;
 }
 
 .about-content {
@@ -347,73 +346,53 @@ footer {
     margin: 0 auto;
 }
 
-/* Заголовки */
-.about-section h2 {
-    font-size: 2rem;
-    color: #d23669;
+.about-highlight {
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #ffccd5, #ffd7df);
+    border-radius: 15px;
 }
 
-/* Текстовые блоки */
+.about-highlight h3 {
+    color: #c44569;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
 .about-text {
-    font-size: 1.1rem;
+    font-size: 1.1em;
+    line-height: 1.8;
     color: #555;
-    margin-bottom: 2rem;
 }
 
-/* Особенности */
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .feature-item {
-    padding: 1.5rem;
+    padding: 25px;
     background: white;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .about-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-text {
-        font-size: 1rem;
-    }
-
-    .feature-item {
-        padding: 1rem;
-    }
-}
-
-/* Для очень маленьких экранов */
-/*@media (max-width: 480px) {
-    .about-section {
-        padding: 1rem 0.5rem;
-    }
-
-    .about-highlight h3 {
-        font-size: 1.2rem;
-    }
-}*/
-
-/* Плавное появление */
-.about-content {
-    animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Ховер-эффекты */
 .feature-item:hover {
     transform: translateY(-5px);
-    transition: all 0.3s ease;
+}
+
+.feature-item h4 {
+    color: #d23669;
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
 }
