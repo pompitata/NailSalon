@@ -146,46 +146,4 @@ function scrollToAbout() {
     });
 }
 
-// script.js
-// Показ модального окна
-function showBookingModal() {
-    const modal = document.getElementById('bookingModal');
-    if (!modal) {
-        console.error('Модальное окно не найдено!');
-        return;
-    }
-    const token = localStorage.getItem('token');
-    if (!token) {
-        alert('Для записи необходимо авторизоваться');
-        showAuthModal();
-        return;
-    }
-    modal.style.display = 'block';
-}
-
-document.querySelector('#bookingModal .close').addEventListener('click', () => {
-    document.getElementById('bookingModal').style.display = 'none';
-});
-
-// Делегирование событий для динамически созданных элементов
-document.addEventListener('click', function(event) {
-    console.log('Clicked element:', event.target);
-
-    if (event.target.closest('.service-item')) {
-        console.log('Service item click detected');
-        showBookingModal();
-    }
-
-    // Клик вне модального окна
-    if (event.target === document.getElementById('bookingModal')) {
-        document.getElementById('bookingModal').style.display = 'none';
-    }
-});
-// Прокрутка к контактам
-function scrollToContacts() {
-    document.querySelector('footer').scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-
 

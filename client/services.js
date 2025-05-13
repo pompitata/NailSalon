@@ -81,8 +81,3 @@ async function checkAuthStatus() {
 }
 
 
-
-// Функция для закрытия модального окна с услугами
-function closeServicesModal() {
-    document.getElementById('servicesModal').style.display = 'none';
-}
