@@ -146,7 +146,8 @@ function scrollToAbout() {
     });
 }
 
-// Показать модальное окно
+// script.js
+// Показ модального окна
 function showBookingModal() {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -157,30 +158,28 @@ function showBookingModal() {
     document.getElementById('bookingModal').style.display = 'block';
 }
 
-// Закрыть модальное окно
+// Закрытие модального окна
 document.querySelector('.modal .close').addEventListener('click', () => {
     document.getElementById('bookingModal').style.display = 'none';
 });
 
-// Обработчик клика на услуги
-document.querySelectorAll('.service-item').forEach(item => {
-    item.addEventListener('click', () => {
+// Делегирование событий для динамически созданных элементов
+document.addEventListener('click', function(event) {
+    // Клик по услуге
+    if (event.target.closest('.service-item')) {
         showBookingModal();
-    });
+    }
+
+    // Клик вне модального окна
+    if (event.target === document.getElementById('bookingModal')) {
+        document.getElementById('bookingModal').style.display = 'none';
+    }
 });
 // Прокрутка к контактам
 function scrollToContacts() {
     document.querySelector('footer').scrollIntoView({
         behavior: 'smooth'
     });
-}
-
-// Закрытие модального окна при клике вне его
-window.onclick = function(event) {
-    const modal = document.getElementById('bookingModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
 }
 
 

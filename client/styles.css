@@ -409,6 +409,40 @@ footer {
         padding: 0 60px; /* Большие отступы для широких экранов */
     }
 }
+/* styles.css */
+/* Модальное окно */
+.modal-service {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-service-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
 .whatsapp-link {
     display: flex;
     align-items: center;
