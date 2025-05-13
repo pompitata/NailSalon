@@ -149,24 +149,30 @@ function scrollToAbout() {
 // script.js
 // Показ модального окна
 function showBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    if (!modal) {
+        console.error('Модальное окно не найдено!');
+        return;
+    }
     const token = localStorage.getItem('token');
     if (!token) {
         alert('Для записи необходимо авторизоваться');
         showAuthModal();
         return;
     }
-    document.getElementById('bookingModal').style.display = 'block';
+    modal.style.display = 'block';
 }
 
-// Закрытие модального окна
-document.querySelector('.modal .close').addEventListener('click', () => {
+document.querySelector('#bookingModal .close').addEventListener('click', () => {
     document.getElementById('bookingModal').style.display = 'none';
 });
 
 // Делегирование событий для динамически созданных элементов
 document.addEventListener('click', function(event) {
-    // Клик по услуге
+    console.log('Clicked element:', event.target);
+
     if (event.target.closest('.service-item')) {
+        console.log('Service item click detected');
         showBookingModal();
     }
 
