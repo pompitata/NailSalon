@@ -145,5 +145,12 @@ function scrollToAbout() {
         block: 'start'
     });
 }
+// Прокрутка к контактам
+function scrollToContacts() {
+    document.querySelector('footer').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
 
 
