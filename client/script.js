@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Функция проверки статуса авторизации
 async function checkAuthStatus() {
     const token = localStorage.getItem('token');  // Получаем токен из LocalStorage
+    const bookingBtn = document.getElementById('bookingBtn');
 
+    if (bookingBtn) {
+        bookingBtn.style.display = token ? 'inline-block' : 'none';
+    }
     const userStatus = document.getElementById('userStatus');  // Элемент, где будет отображаться статус
 
     if (!token) {
@@ -76,7 +80,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 function logout() {
     // Удаляем токен из localStorage
     localStorage.removeItem('token');
-
+    const bookingBtn = document.getElementById('bookingBtn');
+    if (bookingBtn) bookingBtn.style.display = 'none';
     // Очищаем поля логина и пароля
     document.getElementById('loginUsername').value = '';
     document.getElementById('loginPassword').value = '';
