@@ -8,17 +8,18 @@ async function checkAuthStatus() {
     const token = localStorage.getItem('token');  // Получаем токен из LocalStorage
     const bookingBtn = document.getElementById('bookingBtn');
 
-    if (token) {
-        bookingBtn.style.display = 'block'; // Показываем кнопку
-    } else {
-        bookingBtn.style.display = 'none'; // Скрываем кнопку
-    }
 
     const userStatus = document.getElementById('userStatus');  // Элемент, где будет отображаться статус
 
     if (!token) {
         userStatus.innerHTML = '<button class="auth-btn" onclick="showAuthModal()">Войти | Зарегистрироваться</button>';
         return;
+    }
+
+    if (token) {
+        bookingBtn.style.display = 'block'; // Показываем кнопку
+    } else {
+        bookingBtn.style.display = 'none'; // Скрываем кнопку
     }
 
     try {
