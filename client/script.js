@@ -150,6 +150,17 @@ function scrollToAbout() {
         block: 'start'
     });
 }
+
+function showBookingModal() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert('Для записи необходимо авторизоваться');
+        showAuthModal();
+        return;
+    }
+    document.getElementById('bookingModal').style.display = 'block';
+}
+
 // Прокрутка к контактам
 function scrollToContacts() {
     document.querySelector('footer').scrollIntoView({

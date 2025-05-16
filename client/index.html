@@ -18,6 +18,7 @@
             <button onclick="window.location.href='services.html'">Услуги</button>
             <button onclick="scrollToAbout()">О студии</button>
             <button class="contacts-btn" onclick="scrollToContacts()">Контакты</button>
+            <button id="bookingBtn" onclick="showBookingModal()" class="book-button">Записаться</button>
         </nav>
         <div class="auth-container">
             <div id="userStatus"></div>
@@ -80,9 +81,6 @@
     </div>
 </section>
 
-<div class="booking-container">
-    <button id="bookingBtn" class="book-button">Записаться</button>
-</div>
 
 <!-- Модальное окно для авторизации -->
 <div id="authModal" class="modal">
