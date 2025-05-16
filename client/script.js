@@ -16,11 +16,6 @@ async function checkAuthStatus() {
         return;
     }
 
-    if (token) {
-        bookingBtn.style.display = 'block'; // Показываем кнопку
-    } else {
-        bookingBtn.style.display = 'none'; // Скрываем кнопку
-    }
 
     try {
         // Проверяем авторизацию, посылаем токен на сервер
@@ -29,6 +24,12 @@ async function checkAuthStatus() {
                 'Authorization': token  // Отправляем токен в заголовках
             }
         });
+        if (token) {
+            bookingBtn.style.display = 'block'; // Показываем кнопку
+        } else {
+            bookingBtn.style.display = 'none'; // Скрываем кнопку
+        }
+
 
         if (response.ok) {
             const data = await response.json();
