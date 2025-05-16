@@ -22,22 +22,8 @@ app.use(session({
 // Читаем переменные окружения
 const PORT = process.env.PORT || 3000;
 const {
-    DB_USER,
-    DB_PASSWORD,
-    DB_HOST,
-    DB_PORT,
-    DB_NAME,
     SECRET_KEY
 } = process.env;
-
-// Подключение к PostgreSQL
-/*const pool = new Pool({
-    user: DB_USER,
-    host: DB_HOST,
-    database: DB_NAME,
-    password: DB_PASSWORD,
-    port: DB_PORT,
-});*/
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL, // используйте переменную окружения

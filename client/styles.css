@@ -429,3 +429,31 @@ footer {
     text-decoration: none;
     margin: 0 10px;
 }
+
+/* Стили кнопки */
+.book-button {
+    display: none; /* Скрыта по умолчанию */
+    padding: 15px 30px;
+    background: #d23669;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 20px auto;
+    transition: background 0.3s;
+}
+
+.book-button:hover {
+    background: #b52b5a;
+}
+
+/* Модальное окно записи */
+#bookingModal {
+    z-index: 10000; /* Поверх других элементов */
+}
+
+#bookingModal p {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
