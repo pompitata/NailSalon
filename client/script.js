@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Функция проверки статуса авторизации
 async function checkAuthStatus() {
     const token = localStorage.getItem('token');  // Получаем токен из LocalStorage
-    const bookingBtn = document.getElementById('bookingBtn');
-
 
     const userStatus = document.getElementById('userStatus');  // Элемент, где будет отображаться статус
 
@@ -16,7 +14,6 @@ async function checkAuthStatus() {
         return;
     }
 
-
     try {
         // Проверяем авторизацию, посылаем токен на сервер
         const response = await fetch('api/protected', {
@@ -24,12 +21,6 @@ async function checkAuthStatus() {
                 'Authorization': token  // Отправляем токен в заголовках
             }
         });
-        if (token) {
-            bookingBtn.style.display = 'block'; // Показываем кнопку
-        } else {
-            bookingBtn.style.display = 'none'; // Скрываем кнопку
-        }
-
 
         if (response.ok) {
             const data = await response.json();
@@ -81,15 +72,10 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     }
 });
 
-document.getElementById('bookingBtn').addEventListener('click', () => {
-    document.getElementById('bookingModal').style.display = 'block';
-});
-
 // Функция выхода
 function logout() {
     // Удаляем токен из localStorage
     localStorage.removeItem('token');
-    document.getElementById('bookingBtn').style.display = 'none';
 
     // Очищаем поля логина и пароля
     document.getElementById('loginUsername').value = '';
