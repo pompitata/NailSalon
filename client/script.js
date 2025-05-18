@@ -161,6 +161,24 @@ function showBookingModal() {
     document.getElementById('bookingModal').style.display = 'block';
 }
 
+function closeModal() {
+    document.getElementById('bookingModal').style.display = 'none';
+}
+
+// Инициализация обработчиков при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Закрытие по клику на крестик
+    document.querySelector('#bookingModal .close').addEventListener('click', closeModal);
+
+    // 2. Закрытие по клику вне окна
+    document.addEventListener('click', (event) => {
+        const modal = document.getElementById('bookingModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
+
 // Прокрутка к контактам
 function scrollToContacts() {
     document.querySelector('footer').scrollIntoView({
